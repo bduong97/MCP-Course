@@ -1,0 +1,1 @@
+- Feels like resources are for providing initial context to your llm, while tools are to be used dynamically to fetch information on a need-to-know basis
