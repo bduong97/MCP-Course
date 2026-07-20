@@ -43,3 +43,9 @@ def check_order_status(order_id: str) -> str:
     from api_client import check_order_status
     order_status = check_order_status(order_id)
     return order_status
+
+@mcp.tool(name="cancel_order", description="Cancels an order; Needs the order ID")
+def cancel_order(order_id: str) -> str:
+    from api_client import cancel_order
+    order_status = cancel_order(order_id)
+    return order_status

@@ -67,3 +67,24 @@ def check_order_status(order_id: str) -> str:
         return str(error)
     except Exception as error:
         return f"Unknown error occured: {str(error)}"
+
+def cancel_order(order_id: str) -> str:
+    try:
+        data = {
+            'status': "CANCELED"
+        }
+        response = requests.put(
+            f"{BASE_URL}/orders/{order_id}",
+            headers={"Accept": "application/json", "Content-Type": "application/json"},
+            json=data
+        )
+        response.raise_for_status()
+        response_json = response.json()
+        if response_json.get('success') is True:
+            return response_json['data']['status']
+        else:
+            return response_json.get('message', 'Unknown error')
+    except requests.exceptions.RequestException as error:
+        return str(error)
+    except Exception as error:
+        return f"Unknown error: {str(error)}"
