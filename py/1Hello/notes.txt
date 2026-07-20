@@ -1,0 +1,1 @@
+- Always use some kind of mcp inspector tool for quick feedback loops

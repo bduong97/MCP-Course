@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "mcp-server-hello-name": {
+      "command": "uv",
+      "args": [
+        "run",
+        "main_stdio.py"
+      ],
+      "env": {}
+    },
+    // "mcp-server-hello-name-http": {
+    //     "url": "http://localhost:8000/mcp"
+    // }
+  }
+}
